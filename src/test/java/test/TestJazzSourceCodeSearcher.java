@@ -16,9 +16,9 @@ public class TestJazzSourceCodeSearcher {
 
     @Before
     public void startUp() {
-        String user = "";
-        String password = "";
-        String repositoryAddress = "";
+        String user = "auser";
+        String password = "apassword";
+        String repositoryAddress = "http://arepository.com/jazzrepo";
         connection = new JazzConnection(user, password, repositoryAddress);
     }
 
