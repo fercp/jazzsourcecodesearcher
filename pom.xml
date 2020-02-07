@@ -7,33 +7,178 @@
     <groupId>com.ykb.scm</groupId>
     <artifactId>scm</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <project.rtc.client.version>6.0.6.1</project.rtc.client.version>
+        <rtc.client.directory>C:\Users\RuslanLopez\Downloads\RTC-Client-plainJavaLib-${project.rtc.client.version}</rtc.client.directory>
+        <process.common.version>1.3.5000.v20190116_0124</process.common.version>
+        <filesystem.client.version>3.2.1300.v20190111_0130</filesystem.client.version>
+        <filesystem.common.version>3.2.1300.v20190108_2122</filesystem.common.version>
+        <process.client.version>1.3.5000.v20190116_0148</process.client.version>
+        <repository.common.version>1.4.5000.v20190306_1746</repository.common.version>
+        <repository.client.version>1.3.5000.v20190116_0124</repository.client.version>
+        <repository.common.remoteaccess.version>1.2.5000.v20190116_0124</repository.common.remoteaccess.version>
+        <repository.common.serialize.version>1.2.5000.v20190116_0124</repository.common.serialize.version>
+        <repository.common.transport.version>1.2.3000.v20190116_0124</repository.common.transport.version>
+        <repository.common.remoteaccess.auth.version>1.3.4000.v20190116_0124</repository.common.remoteaccess.auth.version>
+        <scm.common.version>3.2.1300.v20190222_1753</scm.common.version>
+        <scm.client.version>3.2.1200.v20190131_0116</scm.client.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.10</version>
+            <version>4.12</version>
+            <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.0.4</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>org.eclipse.core.runtime</artifactId>
+            <version>3.7.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.ecore</artifactId>
+            <version>2.10.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.common</artifactId>
+            <version>2.17.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.ecore.xmi</artifactId>
+            <version>2.16.0</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.ibm.team.filesystem</groupId>
+            <artifactId>common</artifactId>
+            <version>${filesystem.common.version}</version>
+            <scope>system</scope>
+            <systemPath>${rtc.client.directory}/com.ibm.team.filesystem.common_${filesystem.common.version}.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.team.filesystem</groupId>
+            <artifactId>client</artifactId>
+            <version>${filesystem.client.version}</version>
+            <scope>system</scope>
+            <systemPath>${rtc.client.directory}/com.ibm.team.filesystem.client_${filesystem.client.version}.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ibm.team.process</groupId>
+            <artifactId>common</artifactId>
+            <version>${process.common.version}</version>
+            <scope>system</scope>
+            <systemPath>${rtc.client.directory}/com.ibm.team.process.common_${process.common.version}.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.team.process</groupId>
+            <artifactId>client</artifactId>
+            <version>${process.client.version}</version>
+            <scope>system</scope>
+            <systemPath>${rtc.client.directory}/com.ibm.team.process.client_${process.client.version}.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ibm.team.repository</groupId>
+            <artifactId>common</artifactId>
+            <version>${repository.common.version}</version>
+            <scope>system</scope>
+            <systemPath>${rtc.client.directory}/com.ibm.team.repository.common_${repository.common.version}.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.team.repository</groupId>
+            <artifactId>client</artifactId>
+            <version>${repository.client.version}</version>
+            <scope>system</scope>
+            <systemPath>${rtc.client.directory}/com.ibm.team.repository.client_${repository.client.version}.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ibm.team.repository.common</groupId>
+            <artifactId>remoteaccess</artifactId>
+            <version>${repository.common.remoteaccess.version}</version>
+            <scope>system</scope>
+            <systemPath>${rtc.client.directory}/com.ibm.team.repository.common.remoteaccess_${repository.common.remoteaccess.version}.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.team.repository.common</groupId>
+            <artifactId>serialize</artifactId>
+            <version>${repository.common.serialize.version}</version>
+            <scope>system</scope>
+            <systemPath>${rtc.client.directory}/com.ibm.team.repository.common.serialize_${repository.common.serialize.version}.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ibm.team.repository.common</groupId>
+            <artifactId>transport</artifactId>
+            <version>${repository.common.transport.version}</version>
+            <scope>system</scope>
+            <systemPath>${rtc.client.directory}/com.ibm.team.repository.common.transport_${repository.common.transport.version}.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ibm.team.repository.common.remoteaccess</groupId>
+            <artifactId>auth</artifactId>
+            <version>${repository.common.remoteaccess.auth.version}</version>
+            <scope>system</scope>
+            <systemPath>${rtc.client.directory}/com.ibm.team.repository.common.remoteaccess.auth_${repository.common.remoteaccess.auth.version}.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ibm.team.scm</groupId>
+            <artifactId>common</artifactId>
+            <version>${scm.common.version}</version>
+            <scope>system</scope>
+            <systemPath>${rtc.client.directory}/com.ibm.team.scm.common_${scm.common.version}.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.team.scm</groupId>
+            <artifactId>client</artifactId>
+            <version>${scm.client.version}</version>
+            <scope>system</scope>
+            <systemPath>${rtc.client.directory}/com.ibm.team.scm.client_${scm.client.version}.jar</systemPath>
+        </dependency>
+
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
-                <groupId>com.googlecode.addjars-maven-plugin</groupId>
-                <artifactId>addjars-maven-plugin</artifactId>
-                <version>1.0.5</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>add-jars</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>/Users/ferhatcapar/ykbwork/jazzsourcecodesearcher/rtc-client-plainjavalib-3.0.1.3</directory>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
